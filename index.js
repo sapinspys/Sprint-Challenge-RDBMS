@@ -74,13 +74,13 @@ server.get('/api/actions', async (req, res) => {
 });
 
 // list action by id
-server.get('/api/projects/:id', async (req, res) => {
+server.get('/api/actions/:id', async (req, res) => {
   try {
-    let project = await projects.getProject(req.params.id);
-    const projectActions = await actions.getActionsByProject(req.params.id);
-    project.actions = projectActions;
-    if (project) {
-      res.status(200).json(project);
+    let action = await actions.getAction(req.params.id);
+    const actionContexts = await actions.getContextsByAction(req.params.id);
+    action.contexts = actionContexts;
+    if (action) {
+      res.status(200).json(action);
     } else {
       res.status(404).json({ error: "Project not found." })
     }
