@@ -1,8 +1,8 @@
 const express = require('express');
 const helmet = require('helmet');
 
-const projects = require('./models/projects-model.js');
-const actions = require('./models/actions-model.js');
+const projects = require('./data/models/projects-model.js');
+const actions = require('./data/models/actions-model.js');
 
 const server = express();
 
@@ -33,7 +33,7 @@ server.get('/api/projects', async (req, res) => {
   }
 });
 
-// list a project by id
+// list project by id
 server.get('/api/projects/:id', async (req, res) => {
   try {
     let project = await projects.getProject(req.params.id);
@@ -68,6 +68,22 @@ server.get('/api/actions', async (req, res) => {
   try {
     const allActions = await actions.getActions();
     res.status(200).json(allActions);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+
+// list action by id
+server.get('/api/projects/:id', async (req, res) => {
+  try {
+    let project = await projects.getProject(req.params.id);
+    const projectActions = await actions.getActionsByProject(req.params.id);
+    project.actions = projectActions;
+    if (project) {
+      res.status(200).json(project);
+    } else {
+      res.status(404).json({ error: "Project not found." })
+    }
   } catch (error) {
     res.status(500).json(error);
   }
