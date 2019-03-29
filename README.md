@@ -116,6 +116,8 @@ Feel free to name the tables and fields anything you want. **Add relationships**
     }
     ```
 
+Done!
+
 ## Stretch Problem
 
 This section is **optional** and not counted towards MVP. Start working on it after you're done with the main assignment.
