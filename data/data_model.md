@@ -13,9 +13,9 @@
 
 - ACTIONS
   - id: int, pk, autoinc
+  - project_id: int, FK refs id in PROJECTS
   - description: text, not null
   - notes: text, not null
-  - project_id: int, FK refs id in PROJECTS
   - complete: boolean, default to false
 
 
