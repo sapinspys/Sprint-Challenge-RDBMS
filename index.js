@@ -3,6 +3,7 @@ const helmet = require('helmet');
 
 const projects = require('./data/models/projects-model.js');
 const actions = require('./data/models/actions-model.js');
+const contexts = require('./data/models/contexts-model.js');
 
 const server = express();
 
@@ -77,7 +78,7 @@ server.get('/api/actions', async (req, res) => {
 server.get('/api/actions/:id', async (req, res) => {
   try {
     let action = await actions.getAction(req.params.id);
-    const actionContexts = await actions.getContextsByAction(req.params.id);
+    const actionContexts = await contexts.getContextsByAction(req.params.id);
     action.contexts = actionContexts;
     if (action) {
       res.status(200).json(action);

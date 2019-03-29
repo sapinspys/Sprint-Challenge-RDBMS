@@ -3,19 +3,24 @@ const db = require("../dbConfig.js");
 module.exports = {
   getActions,
   addAction,
-  getActionsByProject,
+  getAction,
+  getActionsByProject
 };
 
 function addAction(action) {
-  return db("actions")
-    .insert(action);
+  return db("actions").insert(action);
 }
 
 function getActions() {
   return db("actions");
 }
 
-function getActionsByProject(id) {
+function getAction(id) {
   return db("actions")
-    .where({ project_id: id })
+    .where({ id })
+    .first();
+}
+
+function getActionsByProject(id) {
+  return db("actions").where({ project_id: id });
 }
