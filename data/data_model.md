@@ -3,6 +3,7 @@
 1. Identify the entities (tables):
 - PROJECTS
 - ACTIONS
+- CONTEXTS
 
 2. Identify the attributes (columns):
 - PROJECTS
