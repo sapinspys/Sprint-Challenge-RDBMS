@@ -15,9 +15,8 @@
   - id: int, pk, autoinc
   - project_id: int, FK refs id in PROJECTS
   - description: text, not null
-  - notes: text, not null
+  - notes: text
   - complete: boolean, default to false
-
 
 3. Identify the relationships:
 - PROJECTS <> ACTIONS (one to many)
