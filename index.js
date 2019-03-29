@@ -33,21 +33,21 @@ server.get('/api/projects', async (req, res) => {
   }
 });
 
-// // list a dish by id
-// server.get('/api/projects/:id', async (req, res) => {
-//   try {
-//     let dish = await projects.getDish(req.params.id);
-//     const dishactions = await actions.getactionsByDish(req.params.id);
-//     dish.actions = dishactions;
-//     if (dish) {
-//       res.status(200).json(dish);
-//     } else {
-//       res.status(404).json({ error: "Dish not found." })
-//     }
-//   } catch (error) {
-//     res.status(500).json(error);
-//   }
-// });
+// list a project by id
+server.get('/api/projects/:id', async (req, res) => {
+  try {
+    let project = await projects.getProject(req.params.id);
+    const projectActions = await actions.getActionsByProject(req.params.id);
+    project.actions = projectActions;
+    if (project) {
+      res.status(200).json(project);
+    } else {
+      res.status(404).json({ error: "Project not found." })
+    }
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
 
 // create actions
 server.post('/api/actions', async (req, res) => {

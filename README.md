@@ -91,7 +91,7 @@ Feel free to name the tables and fields anything you want. **Add relationships**
   - [X] GET for projects.
   - [X] POST for adding actions.
   - [X] GET for actions.
-  - [ ] GET for retrieving a `project` by its `id` that returns an object with the following structure:
+  - [X] GET for retrieving a `project` by its `id` that returns an object with the following structure:
 
     ```js
     {
