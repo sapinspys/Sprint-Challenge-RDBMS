@@ -1,5 +1,5 @@
 exports.seed = function(knex, Promise) {
-  return knex('recipes').insert([
+  return knex('actions').insert([
     { project_id: 1, description: "Call CA DMV.", notes: "Tell them you never recieved original." }, // 1
     { project_id: 1, description: "Print out duplicate title forms.", notes: "test note" }, // 2
     { project_id: 1, description: "Fill and send forms." }, // 3
