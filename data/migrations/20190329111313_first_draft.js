@@ -27,7 +27,7 @@ exports.up = function(knex, Promise) {
 
       tbl.text("description").notNullable();
 
-      tbl.text("notes").notNullable();
+      tbl.text("notes")
 
       tbl.boolean("complete").defaultTo(false);
     });
