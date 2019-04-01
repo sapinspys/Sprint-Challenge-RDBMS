@@ -33,52 +33,65 @@ This will be akin to the Web API that you built in the last sprint, only this ti
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 1. Explain the difference between `RDBMS` and `SQL`.
+
+RDBMS stands for relational database management system and SQL for structured query language. A RDBMS is dabatase software that manages storage, querying, updating, and more. SQL is the language that is used to query, or interact with, the RDBMS.
+
 1. Why do tables need a `primary key`?
+
+Since most databases have relationships, tables need a primary key to serve as indexes that can be linked to other tables. 
+
 1. What is the name given to a table column that references the primary key on another table.
+
+The foreign key column.
+
 1. What do we need in order to have a _many to many_ relationship between two tables.
+
+A third table in between the two tables.
 
 ## Project Set Up
 
 Follow these steps for starting your project.
 
-- [ ] Create a forked copy of this project.
-- [ ] Add your project manager as collaborator on Github.
-- [ ] Clone your OWN version of the repository (Not Lambda's by mistake!).
-- [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
-- [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
-- [ ] Push commits: git push origin `<firstName-lastName>`.
+- [X] Create a forked copy of this project.
+- [X] Add your project manager as collaborator on Github.
+- [X] Clone your OWN version of the repository (Not Lambda's by mistake!).
+- [X] Create a new branch: git checkout -b `<firstName-lastName>`.
+- [X] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
+- [X] Push commits: git push origin `<firstName-lastName>`.
 
 Follow these steps for completing your project.
 
-- [ ] Submit a Pull-Request to merge `<firstName-lastName>` Branch into master (student's Repository). **Please don't merge your own pull request**
-- [ ] Add your project manager as a reviewer on the pull-request
-- [ ] Your project manager will count the project as complete by merging the branch back into master.
+- [X] Submit a Pull-Request to merge `<firstName-lastName>` Branch into master (student's Repository). **Please don't merge your own pull request**
+- [X] Add your project manager as a reviewer on the pull-request
+- [X] Your project manager will count the project as complete by merging the branch back into master.
 
 ## Minimum Viable Product
 
 **NOTE** There is no boilerplate for you for this project. You will need to take the steps necessary for creating this project from scratch. Start by initializing your project with a `package.json` file and go from there.
 
-- [ ] A `project` can contain multiple actions and has:
-  - [ ] a unique Id.
-  - [ ] a name.
-  - [ ] a description.
-  - [ ] a flag that indicates if the project is complete or not.
-- [ ] An `action` belongs to only one project. An action has:
-  - [ ] a unique id.
-  - [ ] a description of what needs to be done.
-  - [ ] a notes column to add additional information.
-  - [ ] a flag that indicates if the action has been completed.
+- [X] A `project` can contain multiple actions and has:
+  - [X] a unique Id.
+  - [X] a name.
+  - [X] a description.
+  - [X] a flag that indicates if the project is complete or not.
+- [X] An `action` belongs to only one project. An action has:
+  - [X] a unique id.
+  - [X] a description of what needs to be done.
+  - [X] a notes column to add additional information.
+  - [X] a flag that indicates if the action has been completed.
 
 Feel free to name the tables and fields anything you want. **Add relationships** as you see fit.
 
 ### Tasks
 
-- [ ] Build the database and tables using knex migrations. **Seeding is not needed**.
-- [ ] Build the API with the following endpoints:
+- [X] Build the database and tables using knex migrations. **Seeding is not needed**.
+- [X] Build the API with the following endpoints:
 
-  - [ ] POST for adding projects.
-  - [ ] POST for adding actions.
-  - [ ] GET for retrieving a `project` by its `id` that returns an object with the following structure:
+  - [X] POST for adding projects.
+  - [X] GET for projects.
+  - [X] POST for adding actions.
+  - [X] GET for actions.
+  - [X] GET for retrieving a `project` by its `id` that returns an object with the following structure:
 
     ```js
     {
@@ -103,6 +116,8 @@ Feel free to name the tables and fields anything you want. **Add relationships**
     }
     ```
 
+Done!
+
 ## Stretch Problem
 
 This section is **optional** and not counted towards MVP. Start working on it after you're done with the main assignment.
@@ -113,7 +128,7 @@ Use `knex` to add _data seeding_ scripts for projects and actions.
 
 Add support for the concept of `contexts`. A context is something like _at home_, _at work_ or _at computer_. The idea is that some actions require one or more `contexts` in order to be worked on. For example, the action of _file income taxes_ may require that you are _at home_, _at computer_ and _online_ so if you are _at work_ and look at the list of pending actions you could do in your current context, filing your taxes will not be one of them.
 
-A `context` can be applied to more than one `action`. An action can be tied to more than one context, like in the example above.
+A `context` can be applied to more than one `action`. An action can be tied to more than one context, like in the example above. Done..
 
 When retrieving an `action` by _id_, add a property that lists all the `contexts` related to that action.
 
